@@ -20,7 +20,7 @@ public class Server {
         String command = testURL.substring(commandStart, commandStart+1);
         
         //basically each url location launches new methods i think
-        server.createContext(test, new MyHandler(sw, command));
+        server.createContext(testURL, new MyHandler(sw, command));
         server.createContext("/test2", new MyHandler2());
         
         server.setExecutor(null); // creates a default executor
