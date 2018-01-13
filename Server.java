@@ -8,18 +8,16 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import org.apache.http.client.utils.URIBuilder;
-
 public class Server {
 
     public static void main(String[] args) throws Exception {
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         
-        String testURL = "/test?s=1&c=on";
-        URIBuilder builder = new URIBuilder(testURL);
-        List<NameValuePair> params = builder.getQueryParams();
-        String sw = params.get(0).getValue();
-        String command = params.get(1).getValue();
+        String testURL = "/test?myswitch=1&mycommand=0";
+        int switchStart = testURL.indexOf("myswitch")+10;
+        String sw = testURL.substring(switchStart, switchStart+1);
+        int commandStart = testURL.indexOf("mycommand")+10;
+        String command = testURL.substring(commandStart, commandStart+1);
         
         //basically each url location launches new methods i think
         server.createContext(test, new MyHandler(sw, command));
