@@ -1,10 +1,18 @@
 <script>
-  function press() {
-    window.location.href='/?myswitch=1&mycommand=0'
-  }
+  function submit() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                alert(xhr.response);
+            }
+        }
+        xhr.open('get', 'https://google.com', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.send();
+    }
 </script>
 
 <html>
-  <h1 id="change">hello i have changed</h1>
-  <button onClick="press()">press me</button>
+  <h1 id="change">hello</h1>
+  <input type="submit" value="Start" onclick="submit()">
 </html>
