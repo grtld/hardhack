@@ -16,11 +16,11 @@ public class Server {
         String testURL = "/test?s=1&c=on";
         URIBuilder builder = new URIBuilder(testURL);
         List<NameValuePair> params = builder.getQueryParams();
-        String switch = params.get(0).getValue();
+        String sw = params.get(0).getValue();
         String command = params.get(1).getValue();
         
         //basically each url location launches new methods i think
-        server.createContext(test, new MyHandler(switch, command));
+        server.createContext(test, new MyHandler(sw, command));
         server.createContext("/test2", new MyHandler2());
         
         server.setExecutor(null); // creates a default executor
@@ -28,17 +28,17 @@ public class Server {
     }
 
     static class MyHandler implements HttpHandler {
-        String switch;
+        String sw;
         String command;
         
         public MyHandler(String s, String c) {
-            switch = s;
+            sw = s;
             command = c;
         }
         
         @Override
         public void handle(HttpExchange t) throws IOException {
-            String response = "Switch: " + switch + ", Command: " + command;
+            String response = "Switch: " + sw + ", Command: " + command;
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
