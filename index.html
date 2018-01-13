@@ -3,7 +3,7 @@
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-            alert(xhr.response);
+            alert(xhr.responseText);
         }
     }
     xhr.open('get', 'https://google.com', true);
@@ -13,6 +13,6 @@
 </script>
 
 <html>
-  <h1 id="change">hello ive changed</h1>
+  <h1 id="change">hello</h1>
   <button onClick="press()">press me</button>
 </html>
