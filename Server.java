@@ -34,6 +34,7 @@ public class Server {
         public MyHandler(String s, String c) {
             sw = s;
             command = c;
+            System.out.println("Switch: " + sw + ", Command: " + command);
         }
         
         @Override
