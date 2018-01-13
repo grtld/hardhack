@@ -1,3 +1,5 @@
+import java.util.List;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -6,6 +8,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
+import javax.ws.rs.core;
 import javax.ws.rs.core.UriBuilder;
 
 public class Server {
