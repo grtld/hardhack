@@ -8,7 +8,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import org.apache.http.client.utils.URIBuilder
+import org.apache.http.client.utils.URIBuilder;
 
 public class Server {
 
