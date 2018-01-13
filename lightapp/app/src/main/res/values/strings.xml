@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">light app</string>
+    <string name="button_1_on">On</string>
+    <string name="button_1_off">Off</string>
+</resources>
