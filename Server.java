@@ -33,7 +33,7 @@ public class Server {
         
         public MyHandler(String s, String c) {
             switch = s;
-            command = c
+            command = c;
         }
         
         @Override
