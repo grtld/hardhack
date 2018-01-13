@@ -14,7 +14,7 @@ public class Server {
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         
         String testURL = "/test?myswitch=1&mycommand=0";
-        int switchStart = testURL.indexOf("myswitch")+10;
+        int switchStart = testURL.indexOf("myswitch")+9;
         String sw = testURL.substring(switchStart, switchStart+1);
         int commandStart = testURL.indexOf("mycommand")+10;
         String command = testURL.substring(commandStart, commandStart+1);
